@@ -1,0 +1,108 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Citizen Login Page</title>
+
+    <style>
+        #ana_div {
+            height: auto;
+            width: auto;
+            margin-right: auto;
+            margin-left: auto;
+            margin: 50px;
+            padding-left: 400px;
+            padding-right: 400px;
+            padding-top: 80px;
+        }
+
+        h4 {
+            font-family: "Tangerine", serif;
+            color: #069652;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+<div id="ana_div">
+
+    <div>
+        <a href="https://localhost:44358/CitizenLogin/Login">
+            <h4>Kayıtlı iseniz Giriş için tıklayınız!</h4>
+        </a>
+    </div>
+
+    <fieldset>
+        <legend>Hasta Kayıt Formu</legend>
+
+        <table>
+            <tr>
+                <td>@Html.Label("Ad : ")</td>
+                <td>@Html.TextBox("txtAd")</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Soyad : ")</td>
+                <td>@Html.TextBox("txtSoyAd")</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Doğum Yeri : ")</td>
+                <td>@Html.TextBox("txtBorn")</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Doğum Tarihi : ")</td>
+                <td>@Html.TextBox("txtBirtday")</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("TCKN : ")</td>
+                <td>@Html.TextBox("txtTckn")</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("E-posta : ")</td>
+                <td>@Html.TextBox("txtEMailAddress")</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Telefon : ")</td>
+                <td>@Html.TextBox("txtMobileNumber")</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("İkametgâh Adresi : ")</td>
+                <td>@Html.TextArea("txtHomaAddress")</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Kan Grubu : ")</td>
+                <td>@Html.TextBox("txtKanGrubu")</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Kullanıcı Giriş Şifresi : ")</td>
+                <td>@Html.TextBox("txtUserPassword", "Giriş Şifrenizi Belirleyiniz!")</td>
+            </tr>
+        </table>
+
+        <p>
+            <input type="submit" value="Kaydet" />
+        </p>
+    </fieldset>
+</div>
+    }
+</body>
+</html>
+
+

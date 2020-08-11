@@ -1,0 +1,63 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Doctor Login Page</title>
+
+    <style>
+        #ana_div {
+            height: auto;
+            width: auto;
+            margin-right: auto;
+            margin-left: auto;
+            margin: 50px;
+            padding-left: 400px;
+            padding-right: 400px;
+            padding-top: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <div id="ana_div">
+
+            <fieldset>
+                <legend>Doktor Giriş Ekranı</legend>
+
+                <table>
+                    <tr>
+                        <td>@Html.Label("Doktor Sicil Numarası : ")</td>
+                        <td>@Html.TextBox("txtDoctorSicilNo")</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.Label("Doktor Giriş Şifresi : ")</td>
+                        <td>@Html.TextBox("txtDoctorPassword")</td>
+                    </tr>
+                </table>
+
+                <p>
+                    <input type="submit" value="Giriş" />
+                </p>
+            </fieldset>
+        </div>
+    }
+</body>
+</html>
+
+
